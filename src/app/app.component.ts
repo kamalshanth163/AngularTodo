@@ -1,12 +1,23 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Component, inject, signal } from '@angular/core';
+import { RouterModule } from '@angular/router';
+import { TodoStore } from './store/todos.store';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true,
+  imports: [FormsModule, CommonModule, RouterModule],
 })
+
 export class AppComponent {
-  title = 'todo-app';
+  newTodoTitle = signal('');
+  store = inject(TodoStore);
+
+  submitNewTodo() {
+    this.store.addTodo(this.newTodoTitle());
+    this.newTodoTitle.set(''); 
+  }
 }

@@ -1,0 +1,114 @@
+/* General Styling */
+.content {
+  max-width: 500px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Task Counter */
+.task-counter {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Input Form */
+form {
+  display: flex;
+  gap: 8px;
+}
+
+input[name="newTodoInput"] {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+/* Task List */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #007bff;
+}
+
+/* Completed Tasks */
+.line-through {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Filters */
+.mt-4 {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.mt-4 button {
+  background: #f3f4f6;
+  color: #333;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.mt-4 button:hover {
+  background: #ddd;
+}
+
+.mt-4 button.active {
+  background: #007bff;
+  color: white;
+}
