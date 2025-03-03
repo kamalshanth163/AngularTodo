@@ -2,6 +2,7 @@
 
 This project demonstrates the following features in Angular:
 
+- State management
 - Signals
 - NgRx
 
